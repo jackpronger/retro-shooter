@@ -1,0 +1,134 @@
+/* ── RETRO SHOOTER STYLES ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+}
+
+#gameCanvas {
+  display: block;
+  cursor: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ── HUD ── */
+#hud {
+  position: absolute;
+  top: 0; left: 0;
+  width: 800px;
+  height: 600px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 0 0 6px #000;
+}
+
+#hud-level  { color: #aaf; font-weight: bold; }
+#hud-enemies { color: #f88; }
+#hud-score  { color: #ff0; font-weight: bold; }
+
+#hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 8px 12px;
+}
+
+#hud-health-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#hp-label {
+  color: #0f0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#hud-hp-bar-bg {
+  width: 140px;
+  height: 14px;
+  background: #333;
+  border: 1px solid #666;
+  position: relative;
+}
+
+#hud-hp-bar {
+  height: 100%;
+  width: 100%;
+  background: #0c0;
+  transition: width 0.1s, background 0.2s;
+}
+
+#hud-hp-text {
+  color: #fff;
+  font-size: 12px;
+  min-width: 56px;
+}
+
+#hud-weapon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+#hud-weapon-slots {
+  display: flex;
+  gap: 4px;
+}
+
+.weapon-slot {
+  width: 40px;
+  height: 20px;
+  border: 1px solid #444;
+  background: #111;
+  color: #888;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.weapon-slot.active {
+  border-color: #88f;
+  background: #223;
+  color: #ccf;
+  font-weight: bold;
+}
+
+#hud-ammo {
+  color: #ff0;
+  font-size: 13px;
+}
+
+#hud-weapon-name {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
